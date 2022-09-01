@@ -56,7 +56,7 @@ class ViewController: UIViewController {
             }
         }
         
-        ref = firestore.collection("count").addDocument(data: ["count": count]) { err in
+        ref = firestore.collection("count1").addDocument(data: ["count": count]) { err in
             if let err = err {
                 print("送信できませんでした: \(err)")
             }

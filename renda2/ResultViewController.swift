@@ -21,7 +21,7 @@ class ResultViewController: UIViewController, UITableViewDataSource {
     
     var result: Int = 0
     //    var resultArray = [30, 35, 60, 24, 31, 20, 30, 31, 20]
-    var resultArray: [String] = []
+    var resultArray: [Int] = []
     let saveDate: UserDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
@@ -44,7 +44,7 @@ class ResultViewController: UIViewController, UITableViewDataSource {
         }
         getCount()
 //        resultArray.sort { $0 > $1 }
-        print(resultArray)
+        print("今")
         // Do any additional setup after loading the view.
     }
     
@@ -68,7 +68,7 @@ class ResultViewController: UIViewController, UITableViewDataSource {
     }
     
     func getCount() {
-        firestore.collection("count").getDocuments() { (querySnapshot, error) in
+        firestore.collection("count1").getDocuments() { (querySnapshot, error) in
             if let error = error {
                 print("ドキュメントの取得に失敗しました:", error)
             } else {
@@ -77,15 +77,18 @@ class ResultViewController: UIViewController, UITableViewDataSource {
                 //                    let data = document.data()
                 //
                 //                    resultArray.append(data)
-                self.resultArray = querySnapshot!.documents.map { document in
+                
+                
+//                self.resultArray = querySnapshot!.documents.map { document in
 //                    let data = testData(document: document)
-                    let data = document.data()
-                    self.resultArray.sort { $0 > $1 }
-                    return (data as? String)!
+//                    let data = document.data()
+//                    return data["count"] as! Int
+                    print(self.resultArray)
+//                    print(data)
+
                 }
             }
-            //                    self.resultArray.append(contentsOf: [data])
-        }
+            self.resultArray.sort { $0 > $1 }
     }
 }
 
