@@ -49,6 +49,11 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func reloadButton() {
+        self.table.reloadData()
+        print("リロード")
+    }
+    
     @IBAction func back() {
         saveDate.set(result, forKey: "result")
         print("保存した")
@@ -77,12 +82,12 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return resultArray1.count
+        return resultArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        cell?.textLabel?.text = String(resultArray1[indexPath.row])
+        cell?.textLabel?.text = String(resultArray[indexPath.row])
 //        cell?.textLabel?.text = self.resultArray1[indexPath.row] as? String
         print(cell?.textLabel?.text)
         return cell!
