@@ -29,12 +29,6 @@ class ResultViewController: UIViewController {
 
         getResult()
         self.table.reloadData()
-        //        label.text = saveDate.object(forKey: "result") as? String
-        //
-        //        let value = UserDefaults.standard.array(forKey: "result") as! [String]
-        //        print(value)
-        //        resultArray = value
-        //        saveDate.array(forKey: "resu")
         table.dataSource = self
         table.delegate = self
         table.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
@@ -48,19 +42,8 @@ class ResultViewController: UIViewController {
         }
 //        resultArray.sort { $0 > $1 }
         print("今da")
-        // Do any additional setup after loading the view.
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        getResult()
-//    }
-//
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        self.table.reloadData()
-//    }
-//
     @IBAction func reloadButton() {
         self.table.reloadData()
         print("リロード")
@@ -83,6 +66,7 @@ class ResultViewController: UIViewController {
                             print("ドキュメントの取得に成功しました")
                             for document in querySnapshot!.documents {
                                 let data = document.data()["count"] as? Int
+                                print("わけわかめ")
                                 //取得したデータに対しての処理を書く
                                 self.resultArray.append(data!)
                                 self.resultArray.sort { $0 > $1 }
@@ -112,66 +96,3 @@ extension ResultViewController: UITableViewDataSource, UITableViewDelegate {
     
 }
     
-//    func getCount() -> [Int] {
-////        var getArray = [Int]()
-////
-////        firestore.collection("count1").getDocuments() { (querySnapshot, err) in
-////            if let err = err {
-////                print("Error getting documents: \(err)")
-////            } else {
-////                print("ドキュメントの取得に成功しました")
-////                for document in querySnapshot!.documents {
-////                    let data2 = document.data() as! Int
-////                   getArray.append(data2)
-////                }
-////            }
-////            print("わけわかめ")
-////        }
-////        return getArray
-//
-//
-//        firestore.collection("count1").getDocuments() { (querySnapshot, error) in
-//            if let error = error {
-//                print("ドキュメントの取得に失敗しました:", error)
-//            } else {
-//                print("ドキュメントの取得に成功しました")
-//                                for document in querySnapshot!.documents {
-//                                    let data = document.data()
-//
-//                                    resultArray.append(data) as! Int
-////
-////
-////                self.resultArray = querySnapshot!.documents.map { document in
-////                    let data = testData(document: document)
-////                    let data = document.data()
-////                    return data["count"] as! Int
-////                    print(self.resultArray)
-////                    print(data)
-////
-//                }
-//            }
-////            self.resultArray.sort { $0 > $1 }
-//    }
-//}
-//
-//
-//
-////querySnapshotにドキュメントデータが配列になって入っている。
-////                 <ここから先が後編>
-//
-//
-//class testData: NSObject {
-//    var uid: String?
-//    var data1: String?
-//    var data2: Int?
-//
-//
-//    //init()について解説置いています。
-//
-//    init(document: QueryDocumentSnapshot) {
-//        self.uid = document.documentID
-//        let Dic = document.data()
-//        self.data1 = Dic["data1"] as? String
-//        self.data2 = Dic["data2"] as? Int
-//    }
-//}

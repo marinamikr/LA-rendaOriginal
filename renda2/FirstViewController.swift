@@ -41,23 +41,9 @@ class FirstViewController: UIViewController {
                  }
                  self.label.text = String(count!)
              }
-//        let data = saveDate.object(forKey: "result") as? Int ?? 00
-//        label.text = String(data)
         print("今ここ")
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     @IBAction func segue(segue: UIStoryboardSegue) {
         let firstView = segue.source as? ResultViewController
         max = (firstView?.resultArray[0])!

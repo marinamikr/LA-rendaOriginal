@@ -27,7 +27,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tap.layer.cornerRadius = 100
-        // Do any additional setup after loading the view.
         timerLabel.text = String(time)
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
             self.time -= 1
@@ -35,12 +34,6 @@ class ViewController: UIViewController {
             if self.time == 0 {
                 timer.invalidate()
                 self.performSegue(withIdentifier: "clear", sender: nil)
-                //                if self.count >= 30 {
-                //                    self.performSegue(withIdentifier: "clear", sender: nil)
-                //
-                //                } else {
-                //                    self.performSegue(withIdentifier: "not", sender: nil)
-                //                }
             }
         })
         

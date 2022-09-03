@@ -71,17 +71,17 @@
 			children = (
 				40AC056528BC64DC0033484F /* AppDelegate.swift */,
 				40AC056728BC64DC0033484F /* SceneDelegate.swift */,
+				40AC057B28BC90DA0033484F /* FirstViewController.swift */,
 				40AC056928BC64DC0033484F /* ViewController.swift */,
+				40AC057928BC807B0033484F /* ResultViewController.swift */,
+				40C4A67F28C395DD0051D2EC /* TableViewCell.swift */,
+				40C4A68028C395DD0051D2EC /* TableViewCell.xib */,
 				40AC056B28BC64DC0033484F /* Main.storyboard */,
 				40AC056E28BC64DF0033484F /* Assets.xcassets */,
 				40AC057028BC64DF0033484F /* LaunchScreen.storyboard */,
 				40AC057328BC64DF0033484F /* Info.plist */,
-				40AC057928BC807B0033484F /* ResultViewController.swift */,
-				40AC057B28BC90DA0033484F /* FirstViewController.swift */,
 				40C4A67428C0E97D0051D2EC /* GoogleService-Info.plist */,
 				40C4A67E28C3921E0051D2EC /* ヒラギノ丸ゴ ProN W4.ttc */,
-				40C4A67F28C395DD0051D2EC /* TableViewCell.swift */,
-				40C4A68028C395DD0051D2EC /* TableViewCell.xib */,
 			);
 			path = renda2;
 			sourceTree = "<group>";
