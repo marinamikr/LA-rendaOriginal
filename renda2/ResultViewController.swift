@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import FirebaseCore
 
-class ResultViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ResultViewController: UIViewController {
     
     
     @IBOutlet var resultLabel: UILabel!
@@ -20,14 +20,15 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     var ref: DocumentReference?
     
     var result: Int = 0
-        var resultArray1 = [30, 35, 60, 24, 31, 20, 30, 31, 20]
+    var resultArray1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
     var resultArray: [Int] = []
     let saveDate: UserDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getResult()
 
+        getResult()
+        self.table.reloadData()
         //        label.text = saveDate.object(forKey: "result") as? String
         //
         //        let value = UserDefaults.standard.array(forKey: "result") as! [String]
@@ -36,6 +37,7 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         //        saveDate.array(forKey: "resu")
         table.dataSource = self
         table.delegate = self
+        table.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
 
         label.text = String(result)
         
@@ -49,6 +51,16 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         // Do any additional setup after loading the view.
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        getResult()
+//    }
+//
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        self.table.reloadData()
+//    }
+//
     @IBAction func reloadButton() {
         self.table.reloadData()
         print("リロード")
@@ -57,9 +69,9 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     @IBAction func back() {
         saveDate.set(result, forKey: "result")
         print("保存した")
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
-        //        self.dismiss(animated: true, completion: nil)
-        //        self.presentingViewController?.dismiss(animated: true, completion: nil)
+//        let firstView = segue.source as! FirstViewController
+//        firstView.max = resultArray[0]
+        performSegue(withIdentifier: "back", sender: nil)
         print("now")
     }
     
@@ -81,16 +93,21 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
+}
+
+extension ResultViewController: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return resultArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        cell?.textLabel?.text = String(resultArray[indexPath.row])
-//        cell?.textLabel?.text = self.resultArray1[indexPath.row] as? String
-        print(cell?.textLabel?.text)
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! TableViewCell
+        cell.label?.text = String(resultArray[indexPath.row])
+        cell.rankLabel?.text = String(resultArray1[indexPath.row]) + "位"
+        print(cell.textLabel?.text)
+        print(resultArray[0])
+        return cell
     }
     
 }

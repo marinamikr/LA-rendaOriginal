@@ -17,6 +17,8 @@
 		40AC057C28BC90DA0033484F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AC057B28BC90DA0033484F /* FirstViewController.swift */; };
 		40C4A67328C0E4710051D2EC /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 40C4A67228C0E4710051D2EC /* FirebaseFirestore */; };
 		40C4A67528C0E97D0051D2EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 40C4A67428C0E97D0051D2EC /* GoogleService-Info.plist */; };
+		40C4A68128C395DD0051D2EC /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4A67F28C395DD0051D2EC /* TableViewCell.swift */; };
+		40C4A68228C395DD0051D2EC /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40C4A68028C395DD0051D2EC /* TableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,9 @@
 		40AC057928BC807B0033484F /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		40AC057B28BC90DA0033484F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		40C4A67428C0E97D0051D2EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		40C4A67E28C3921E0051D2EC /* ヒラギノ丸ゴ ProN W4.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ヒラギノ丸ゴ ProN W4.ttc"; sourceTree = "<group>"; };
+		40C4A67F28C395DD0051D2EC /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		40C4A68028C395DD0051D2EC /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +79,9 @@
 				40AC057928BC807B0033484F /* ResultViewController.swift */,
 				40AC057B28BC90DA0033484F /* FirstViewController.swift */,
 				40C4A67428C0E97D0051D2EC /* GoogleService-Info.plist */,
+				40C4A67E28C3921E0051D2EC /* ヒラギノ丸ゴ ProN W4.ttc */,
+				40C4A67F28C395DD0051D2EC /* TableViewCell.swift */,
+				40C4A68028C395DD0051D2EC /* TableViewCell.xib */,
 			);
 			path = renda2;
 			sourceTree = "<group>";
@@ -143,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40C4A67528C0E97D0051D2EC /* GoogleService-Info.plist in Resources */,
+				40C4A68228C395DD0051D2EC /* TableViewCell.xib in Resources */,
 				40AC057228BC64DF0033484F /* LaunchScreen.storyboard in Resources */,
 				40AC056F28BC64DF0033484F /* Assets.xcassets in Resources */,
 				40AC056D28BC64DC0033484F /* Main.storyboard in Resources */,
@@ -159,6 +168,7 @@
 				40AC057C28BC90DA0033484F /* FirstViewController.swift in Sources */,
 				40AC056A28BC64DC0033484F /* ViewController.swift in Sources */,
 				40AC056628BC64DC0033484F /* AppDelegate.swift in Sources */,
+				40C4A68128C395DD0051D2EC /* TableViewCell.swift in Sources */,
 				40AC056828BC64DC0033484F /* SceneDelegate.swift in Sources */,
 				40AC057A28BC807B0033484F /* ResultViewController.swift in Sources */,
 			);

@@ -12,14 +12,17 @@ import FirebaseFirestore
 class FirstViewController: UIViewController {
     
     @IBOutlet var label: UILabel!
+    @IBOutlet var maxLabel: UILabel!
     let saveDate: UserDefaults = UserDefaults.standard
     
     let firestore = Firestore.firestore()
     var ref: DocumentReference?
+    var max: Int = 30
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        maxLabel.text = String(max)
         firestore.collection("counts").document("share").addSnapshotListener { snapshot, error in
                  if error != nil {
                      print("エラーが発生しました")
@@ -54,5 +57,12 @@ class FirstViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func segue(segue: UIStoryboardSegue) {
+        let firstView = segue.source as? ResultViewController
+        max = (firstView?.resultArray[0])!
+        maxLabel.text = String(max)
+    }
+    
 
 }

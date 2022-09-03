@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var label: UILabel!
     @IBOutlet var timerLabel: UILabel!
+    @IBOutlet var tap: UIButton!
     
     var count: Int = 0
     var timer = Timer()
@@ -25,6 +26,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tap.layer.cornerRadius = 100
         // Do any additional setup after loading the view.
         timerLabel.text = String(time)
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
@@ -75,12 +77,6 @@ class ViewController: UIViewController {
         label.text = String(count)
     }
     
-    //    func countDown() {
-    //        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
-    //                  self.time -= 1
-    //                  self.timerLabel.text = String(self.time)
-    //        })
-    //    }
-    
+
 }
 

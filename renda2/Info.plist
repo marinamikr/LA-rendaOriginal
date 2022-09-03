@@ -21,5 +21,9 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>ヒラギノ丸ゴ ProN W4.ttc</string>
+	</array>
 </dict>
 </plist>
